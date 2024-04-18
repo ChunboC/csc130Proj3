@@ -28,18 +28,19 @@ public class Departure extends Thread {
 
 	@Override
 	public void run() {
-		long randomWaitTime;
+		long randomWaitTime = 0;
 		while (running) {
-			randomWaitTime = SimulationTime.timeTillNext(5000);
 			try {
 				sleep(randomWaitTime);
 			} catch (InterruptedException e) {
 				System.out.println("Departure Thread interrupted!");
+				break;
 			}
 			int planeNum = (int) (Math.random() * 20) + 10;
 			int arrLen = SimulationTime.AIRLINES.length;
 			String planeID = SimulationTime.AIRLINES[(int) (Math.random() * arrLen)] + planeNum;
 			Airline plane = new Airline(planeID, System.currentTimeMillis());
+			randomWaitTime = SimulationTime.timeTillNext(12000);
 			queue.enqueue(plane);
 			System.out.println(
 					"Minute: " + ((System.currentTimeMillis() - Program3.getStartTime()) / 1000)
