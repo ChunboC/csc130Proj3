@@ -1,5 +1,15 @@
 package csc130.chengc.project3;
-
+/**
+ * <p>
+ * Title: The ArrayQueue class
+ * </p>
+ * 
+ * <p>
+ * Description: A queue data structure implemented with an array
+ * </p>
+ * 
+ * @author Chunbo Cheng
+ */
 public class ArrayQueue<T> implements Queue<T> {
 	private T[] items;
 	private int size, front, rear;	// front and rear are POSITIONS!

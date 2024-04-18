@@ -1,5 +1,15 @@
 package csc130.chengc.project3;
-
+/**
+ * <p>
+ * Title: The airline class
+ * </p>
+ * 
+ * <p>
+ * Description: presents an airplane with identifiers
+ * </p>
+ * 
+ * @author Chunbo Cheng
+ */
 public class Airline {
 	private String flightID; // Plane’s id tag example: AA204
 	private long entered; // Time the plane entered the queue
